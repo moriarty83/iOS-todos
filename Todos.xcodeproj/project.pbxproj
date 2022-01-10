@@ -16,6 +16,7 @@
 		83D13BEE278A770300B3C7D7 /* TodosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D13BED278A770300B3C7D7 /* TodosTests.swift */; };
 		83D13BF8278A770300B3C7D7 /* TodosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D13BF7278A770300B3C7D7 /* TodosUITests.swift */; };
 		83D13BFA278A770300B3C7D7 /* TodosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D13BF9278A770300B3C7D7 /* TodosUITestsLaunchTests.swift */; };
+		83D13C07278A88DA00B3C7D7 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D13C06278A88DA00B3C7D7 /* CreateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		83D13BF3278A770300B3C7D7 /* TodosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D13BF7278A770300B3C7D7 /* TodosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosUITests.swift; sourceTree = "<group>"; };
 		83D13BF9278A770300B3C7D7 /* TodosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83D13C06278A88DA00B3C7D7 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				83D13BD6278A770200B3C7D7 /* AppDelegate.swift */,
+				83D13C06278A88DA00B3C7D7 /* CreateViewController.swift */,
 				83D13BD8278A770200B3C7D7 /* SceneDelegate.swift */,
 				83D13BDA278A770200B3C7D7 /* ViewController.swift */,
 				83D13BDC278A770200B3C7D7 /* Main.storyboard */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D13C07278A88DA00B3C7D7 /* CreateViewController.swift in Sources */,
 				83D13BDB278A770200B3C7D7 /* ViewController.swift in Sources */,
 				83D13BD7278A770200B3C7D7 /* AppDelegate.swift in Sources */,
 				83D13BD9278A770200B3C7D7 /* SceneDelegate.swift in Sources */,
