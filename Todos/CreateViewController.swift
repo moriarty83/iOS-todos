@@ -20,15 +20,15 @@ class CreateViewController: UIViewController, UITextFieldDelegate {
         }
         
         
-        guard let taskCount = UserDefaults().value(forKey: "taskCount") as? Int else{
-            return
-        }
-        
-        let newCount = taskCount + 1
-        
-        UserDefaults().set(newCount, forKey: "taskCount")
+//        guard let taskCount = UserDefaults().value(forKey: "taskCount") as? Int else{
+//            return
+//        }
+//
+//        let newCount = taskCount + 1
+//
+//        UserDefaults().set(newCount, forKey: "taskCount")
 
-        UserDefaults().set(text, forKey: "task_\(newCount)")
+        UserDefaults().set(text, forKey: "newTask")
 
         update?()
         
@@ -47,5 +47,5 @@ class CreateViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-
+    
 }

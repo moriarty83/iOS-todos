@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		833746C6278C8FF90064F97E /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833746C5278C8FF90064F97E /* ShowViewController.swift */; };
 		83D13BD7278A770200B3C7D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D13BD6278A770200B3C7D7 /* AppDelegate.swift */; };
 		83D13BD9278A770200B3C7D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D13BD8278A770200B3C7D7 /* SceneDelegate.swift */; };
 		83D13BDB278A770200B3C7D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D13BDA278A770200B3C7D7 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		833746C5278C8FF90064F97E /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		83D13BD3278A770200B3C7D7 /* Todos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D13BD6278A770200B3C7D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83D13BD8278A770200B3C7D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				83D13BD6278A770200B3C7D7 /* AppDelegate.swift */,
 				83D13C06278A88DA00B3C7D7 /* CreateViewController.swift */,
+				833746C5278C8FF90064F97E /* ShowViewController.swift */,
 				83D13BD8278A770200B3C7D7 /* SceneDelegate.swift */,
 				83D13BDA278A770200B3C7D7 /* ViewController.swift */,
 				83D13BDC278A770200B3C7D7 /* Main.storyboard */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833746C6278C8FF90064F97E /* ShowViewController.swift in Sources */,
 				83D13C07278A88DA00B3C7D7 /* CreateViewController.swift in Sources */,
 				83D13BDB278A770200B3C7D7 /* ViewController.swift in Sources */,
 				83D13BD7278A770200B3C7D7 /* AppDelegate.swift in Sources */,

@@ -15,13 +15,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello world")
+
         // Do any additional setup after loading the view.
         
         // Setup
         if !UserDefaults().bool(forKey: "setup"){
             UserDefaults().set(true, forKey: "setup")
             UserDefaults().set(0, forKey: "taskCount")
+            UserDefaults().set(tasks, forKey: "tasks")
         }
         
         // Sets Table delegate and datasourc3e.
@@ -32,26 +33,20 @@ class ViewController: UIViewController {
     }
 
     func updateTasks(){
-        print("updateTasks")
-        tasks.removeAll()
+        tasks = UserDefaults().value(forKey: "tasks") as? [String] ?? [String]()
         
-        guard let count = UserDefaults().value(forKey: "taskCount") as? Int else{
-            return
+        if let deleteIndex = UserDefaults().value(forKey: "deleteIndex") as? Int{
+            tasks.remove(at: deleteIndex)
+            UserDefaults().set(tasks, forKey: "tasks")
+            UserDefaults().removeObject(forKey: "deleteIndex")
         }
         
-        print("count: \(count)")
-        
-        for x in 0...count{
-            if let task = UserDefaults().value(forKey: "task_\(x+1)") as? String {
-                
-                tasks.append(task)
-            }
+        if let newTask = UserDefaults().value(forKey: "newTask") as? String {
+            tasks.append(newTask)
+            UserDefaults().set(tasks, forKey: "tasks")
+            UserDefaults().removeObject(forKey: "newTask")
         }
-        
-        print(tasks)
-        
         tableView.reloadData()
-        
     }
     
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
@@ -59,7 +54,6 @@ class ViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "create") as! CreateViewController
         vc.title = "New Todo"
         vc.update = {
-            print("vc.update")
             DispatchQueue.main.async {
                 self.updateTasks()
             }
@@ -76,8 +70,19 @@ extension ViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
     
+        let vc = storyboard?.instantiateViewController(withIdentifier: "show") as! ShowViewController
+        vc.title = "Todo"
+        vc.task = tasks[indexPath.row]
+        vc.taskIndex = indexPath.row
+        vc.update = {
+            DispatchQueue.main.async {
+                self.updateTasks()
+            }
+            
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ViewController: UITableViewDataSource{

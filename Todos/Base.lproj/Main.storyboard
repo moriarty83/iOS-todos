@@ -54,11 +54,53 @@
                     <connections>
                         <outlet property="tableView" destination="1dw-2e-IKB" id="kDI-Bi-J0f"/>
                         <segue destination="25a-Zx-4g1" kind="show" identifier="createSegue" id="GUp-gh-r4y"/>
+                        <segue destination="7T7-O0-fkE" kind="show" id="9bq-9O-7nd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="71.651785714285708"/>
+        </scene>
+        <!--Show View Controller-->
+        <scene sceneID="b9t-44-QYX">
+            <objects>
+                <viewController storyboardIdentifier="show" id="7T7-O0-fkE" customClass="ShowViewController" customModule="Todos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eyz-3X-ROi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-aF-aNh">
+                                <rect key="frame" x="186" y="345" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCL-P1-IDM">
+                                <rect key="frame" x="175" y="458" width="66" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Delete">
+                                    <color key="baseBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteTask:" destination="7T7-O0-fkE" eventType="touchUpInside" id="sYx-SG-YGh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2F9-qS-byR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NFZ-VT-bkN">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="M2p-OO-Z08"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="taskLabel" destination="dAO-aF-aNh" id="PIE-dA-gqW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWh-A6-3yG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="-197"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="15q-ea-gHh">
@@ -98,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yd-sl-QsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="72"/>
+            <point key="canvasLocation" x="1813" y="477"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WVO-iB-wlW">
