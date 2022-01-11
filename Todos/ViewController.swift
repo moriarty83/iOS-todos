@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var tasks = ["hello", "goodbye", "fun"]
+    var tasks = ["Press + To Add a Task"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,18 +34,7 @@ class ViewController: UIViewController {
     
     func updateTasks(){
         tasks = UserDefaults().value(forKey: "tasks") as? [String] ?? [String]()
-        
-//        if let deleteIndex = UserDefaults().value(forKey: "deleteIndex") as? Int{
-//            tasks.remove(at: deleteIndex)
-//            UserDefaults().set(tasks, forKey: "tasks")
-//            UserDefaults().removeObject(forKey: "deleteIndex")
-//        }
-//
-//        if let newTask = UserDefaults().value(forKey: "newTask") as? String {
-//            tasks.append(newTask)
-//            UserDefaults().set(tasks, forKey: "tasks")
-//            UserDefaults().removeObject(forKey: "newTask")
-//        }
+        print("tasks are \(tasks)")
         tableView.reloadData()
     }
     
@@ -63,6 +52,11 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func didTapShowComplete(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "complete") as! CompleteViewController
+        vc.title = "Complete"
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ViewController: UITableViewDelegate{
@@ -90,8 +84,7 @@ extension ViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        print(tasks[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         cell.textLabel?.text = tasks[indexPath.row]
         
         return cell

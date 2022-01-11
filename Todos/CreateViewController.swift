@@ -9,6 +9,8 @@ import UIKit
 
 class CreateViewController: UIViewController, UITextFieldDelegate {
     
+    var taskManager = TaskManager()
+    
     @IBOutlet weak var taskText: UITextField!
     
     var update: (() -> Void)?
@@ -19,9 +21,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate {
             return
         }
 
-
-        UserDefaults().set(text, forKey: "newTask")
-
+        taskManager.addTask(taskText: text)
         update?()
         
         navigationController?.popViewController(animated: true)

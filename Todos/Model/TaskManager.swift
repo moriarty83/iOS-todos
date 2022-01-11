@@ -30,16 +30,24 @@ struct TaskManager {
         saveTasks()
     }
     
-    mutating func completeTask(taskIndex: Int)->Void{
-        completedTasks.append(tasks[taskIndex])
-        tasks.remove(at: taskIndex)
+    mutating func addTask(taskText: String)->Void{
+        tasks.append(taskText)
         saveTasks()
     }
     
-    func saveTasks(){
-        print(tasks)
+    mutating func completeTask(taskIndex: Int)->Void{
+        completedTasks.append(tasks[taskIndex])
+        tasks.remove(at: taskIndex)
+        print(completedTasks)
+        saveTasks()
+    }
+    
+
+    
+    mutating func saveTasks(){
         UserDefaults().set(tasks, forKey: "tasks")
         UserDefaults().set(completedTasks, forKey: "completedTasks")
+        
     }
     
 
