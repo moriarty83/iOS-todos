@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var tasks = ["hello", "goodbye", "fun"]
@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         // Setup
         if !UserDefaults().bool(forKey: "setup"){
             UserDefaults().set(true, forKey: "setup")
@@ -32,20 +31,21 @@ class ViewController: UIViewController {
         updateTasks()
     }
 
+    
     func updateTasks(){
         tasks = UserDefaults().value(forKey: "tasks") as? [String] ?? [String]()
         
-        if let deleteIndex = UserDefaults().value(forKey: "deleteIndex") as? Int{
-            tasks.remove(at: deleteIndex)
-            UserDefaults().set(tasks, forKey: "tasks")
-            UserDefaults().removeObject(forKey: "deleteIndex")
-        }
-        
-        if let newTask = UserDefaults().value(forKey: "newTask") as? String {
-            tasks.append(newTask)
-            UserDefaults().set(tasks, forKey: "tasks")
-            UserDefaults().removeObject(forKey: "newTask")
-        }
+//        if let deleteIndex = UserDefaults().value(forKey: "deleteIndex") as? Int{
+//            tasks.remove(at: deleteIndex)
+//            UserDefaults().set(tasks, forKey: "tasks")
+//            UserDefaults().removeObject(forKey: "deleteIndex")
+//        }
+//
+//        if let newTask = UserDefaults().value(forKey: "newTask") as? String {
+//            tasks.append(newTask)
+//            UserDefaults().set(tasks, forKey: "tasks")
+//            UserDefaults().removeObject(forKey: "newTask")
+//        }
         tableView.reloadData()
     }
     
@@ -60,7 +60,6 @@ class ViewController: UIViewController {
             
         }
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     
@@ -97,7 +96,5 @@ extension ViewController: UITableViewDataSource{
         
         return cell
     }
-    
-    
 }
 

@@ -18,15 +18,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate {
         guard let text = taskText.text, !text.isEmpty else {
             return
         }
-        
-        
-//        guard let taskCount = UserDefaults().value(forKey: "taskCount") as? Int else{
-//            return
-//        }
-//
-//        let newCount = taskCount + 1
-//
-//        UserDefaults().set(newCount, forKey: "taskCount")
+
 
         UserDefaults().set(text, forKey: "newTask")
 
