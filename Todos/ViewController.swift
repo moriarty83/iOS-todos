@@ -38,7 +38,8 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
+
+    @IBAction func didTapAdd(_ sender: Any) {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "create") as! CreateViewController
         vc.title = "New Todo"
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func didTapShowComplete(_ sender: UIButton) {
+    @IBAction func didTapShowComplete(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "complete") as! CompleteViewController
         vc.title = "Complete"
         navigationController?.pushViewController(vc, animated: true)
