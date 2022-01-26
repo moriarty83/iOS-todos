@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var tasks = ["Press + To Add a Task"]
+    var tasks = ["Add a Task"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
